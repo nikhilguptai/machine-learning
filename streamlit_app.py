@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 st.title('🤖This is Machine Learning app')
 
@@ -17,3 +19,9 @@ with st.expander('**Raw data**'):
  st.write('**Y**')
  Y = df.Close
  Y
+with st.expander('Data Visualization')
+ for i in netflix.columns:
+ plt.figure(figsize=(10,6))
+ sns.distplot(df[i])
+ plt.title(i)
+ st.pyplot(fig)
