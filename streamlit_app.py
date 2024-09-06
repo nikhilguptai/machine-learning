@@ -28,4 +28,4 @@ with st.expander('Data Visualization'):
   plt.figure(figsize=(10,6))
   sns.distplot(df[i])
   plt.title(i)
-  st.plt.show()
+  st.pyplot(plt)
