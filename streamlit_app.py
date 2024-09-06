@@ -47,6 +47,17 @@ data = { 'Open' : Open,
         'year' : year,
         'month' : month,
         'day' : day,}
+input_df = pd.DataFrame(data, index=[0])
+input_stocks = pd.concat([input_df, X_raw], axis=0)
+with st.expander('Input features'):
+  st.write('**Input data**')
+  input_df
+  st.write('**Combined stocks data**')
+  input_stocks
+
+
+
+
 
 
 
