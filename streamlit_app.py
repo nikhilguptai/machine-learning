@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 
 st.title('🤖This is Machine Learning app')
 
@@ -29,6 +32,7 @@ with st.expander('Data Visualization'):
   sns.distplot(df[i])
   plt.title(i)
   st.pyplot(plt)
+  
 Open = st.text_input("Enter Open:")
 High = st.text_input("Enter High:")
 Low = st.text_input("Enter Low:")
@@ -37,6 +41,7 @@ Volume = st.text_input("Enter Volume:")
 year = st.text_input("Enter year:")
 month = st.text_input("Enter month:")
 day = st.text_input("Enter Day:")
+input_data = np.array([[Open,High,Low,Adj_Close,Volume,year,month,day]])
 
 #data frame
 data = { 'Open' : Open,
@@ -47,6 +52,7 @@ data = { 'Open' : Open,
         'year' : year,
         'month' : month,
         'day' : day,}
+
 input_df = pd.DataFrame(data, index=[0])
 input_stocks = pd.concat([input_df, X], axis=0)
 with st.expander('Input features'):
@@ -54,6 +60,28 @@ with st.expander('Input features'):
   input_df
   st.write('**Combined stocks data**')
   input_stocks
+ 
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2)
+
+model = LinearRegression()
+
+model.fit(X_train, Y_train)
+
+Y_pred = model.predict(X_test)
+
+r2 = r2_score(Y_test, Y_pred)
+
+st.write("R-squared (R2):", r2)
+
+
+
+if st.button('Predict'):
+    prediction = model.predict(input_data)
+    
+    # Display the prediction
+    st.write("Prediction:", prediction)
+if st.button('R2 score')
+ st.write("R-squared (R2):", r2)
 
 
 
