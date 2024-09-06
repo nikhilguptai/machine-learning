@@ -12,5 +12,5 @@ with st.expander('**Raw data**'):
  df['year'] = df['Date'].dt.year
  df['month'] = df['Date'].dt.month
  df['day'] = df['Date'].dt.day
- X=df.drop(df.columns[[0, 4]], axis=1, inplace=True)
+ X = df.filter(items=[col for col in df.columns if col not in ['Date', 'Close']])
  X
