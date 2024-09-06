@@ -38,6 +38,17 @@ year = st.text_input("Enter year:")
 month = st.text_input("Enter month:")
 day = st.text_input("Enter Day:")
 
+#data frame
+data = { 'Open' : Open,
+        'High' : High,
+        'Low' : Low,
+        'Adj_Close' : Adj_Close,
+        'Volume' : Volume,
+        'year' : year,
+        'month' : month,
+        'day' : day,}
+
+
 
   
  
