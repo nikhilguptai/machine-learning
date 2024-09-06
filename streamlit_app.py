@@ -12,5 +12,5 @@ with st.expander('**Raw data**'):
  df['year'] = df['Date'].dt.year
  df['month'] = df['Date'].dt.month
  df['day'] = df['Date'].dt.day
- Xx=df.drop('Date',axis=1,inplace=True)
- X=Xx.drop('Close',axis=1)
+ X=df.drop(df.columns[[0, 4]], axis=1, inplace=True)
+ X
