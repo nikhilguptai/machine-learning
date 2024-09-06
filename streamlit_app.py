@@ -29,8 +29,7 @@ with st.expander('Data Visualization'):
   sns.distplot(df[i])
   plt.title(i)
   st.pyplot(plt)
- with st.expander('Enter Data')
-  #Open,High,Low,Adj_Close,Volume,year,month,day
+ with st.expander('Enter Data'):
   Open = st.text_input("Enter Open:")
   High = st.text_input("Enter High:")
   Low = st.text_input("Enter Open:")
@@ -39,6 +38,7 @@ with st.expander('Data Visualization'):
   year = st.text_input("Enter Open:")
   month = st.text_input("Enter Open:")
   day = st.text_input("Enter Open:")
+  
 
   
  
