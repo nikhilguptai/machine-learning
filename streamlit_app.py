@@ -31,12 +31,12 @@ with st.expander('Data Visualization'):
   st.pyplot(plt)
 Open = st.text_input("Enter Open:")
 High = st.text_input("Enter High:")
-Low = st.text_input("Enter Open:")
-Asj_Close = st.text_input("Enter Open:") 
-Volume = st.text_input("Enter Open:")
-year = st.text_input("Enter Open:")
-month = st.text_input("Enter Open:")
-day = st.text_input("Enter Open:")
+Low = st.text_input("Enter Low:")
+Adj_Close = st.text_input("Enter Adj_Close:") 
+Volume = st.text_input("Enter Volume:")
+year = st.text_input("Enter year:")
+month = st.text_input("Enter month:")
+day = st.text_input("Enter Day:")
   
   
 
