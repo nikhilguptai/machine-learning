@@ -6,12 +6,14 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
-
+st.set_page_config(
+    page_title="Multi-Page App",
+    page_icon=":rocket:",
+)
 st.title('🤖This is Machine Learning app')
 
 st.info('This app builds machine learning model')
-tab1, tab2, tab3 = st.tabs(["Tab 1", "Tab 2", "Tab 3"])
-with tab1:
+
  with st.expander('**Raw data**'):
  df=pd.read_csv('NFLX.csv')
  df
