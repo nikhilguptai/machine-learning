@@ -37,14 +37,14 @@ Volume = st.text_input("Enter Volume:")
 year = st.text_input("Enter year:")
 month = st.text_input("Enter month:")
 day = st.text_input("Enter Day:")
-data = ('Open': Open,
-        'High': High,
-        'Low': Low,
-        'Adj_Close': Adj_Close,
-        'Volume': volume,
-        'year': year,
-        'month': month,
-        'day': day)
+data = ('Open' : Open,
+        'High' : High,
+        'Low' : Low,
+        'Adj_Close' : Adj_Close,
+        'Volume' : volume,
+        'year' : year,
+        'month' : month,
+        'day' : day)
 input_df = pd.dataframe(data, index[0])
 input_stocks = pd.concat([input_df, X], axis=0)
 input_df
