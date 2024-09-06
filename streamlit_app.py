@@ -20,8 +20,12 @@ with st.expander('**Raw data**'):
  Y = df.Close
  Y
 with st.expander('Data Visualization'):
+ st.write('***Data **')
+ corr = df.corr()
+ sns.heatmap(corr,annot=True,cmap='coolwarm',cbar=True)
+ sns.pairplot(netflix)
  for i in netflix.columns:
- plt.figure(figsize=(10,6))
- sns.distplot(df[i])
- plt.title(i)
- st.pyplot(fig)
+  plt.figure(figsize=(10,6))
+  sns.distplot(df[i])
+  plt.title(i)
+  st.plt.show()
