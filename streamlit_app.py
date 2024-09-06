@@ -44,7 +44,7 @@ data = ('Open': Open,
         'Volume': volume,
         'year': year,
         'month': month,
-        'day': day')
+        'day': day)
 input_df = pd.dataframe(data, index[0])
 input_stocks = pd.concat([input_df, X], axis=0)
 input_df
