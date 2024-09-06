@@ -10,7 +10,9 @@ from sklearn.metrics import r2_score
 st.title('🤖This is Machine Learning app')
 
 st.info('This app builds machine learning model')
-with st.expander('**Raw data**'):
+tab1, tab2, tab3 = st.tabs(["Tab 1", "Tab 2", "Tab 3"])
+with tab1:
+ with st.expander('**Raw data**'):
  df=pd.read_csv('NFLX.csv')
  df
  st.write('**X**')
