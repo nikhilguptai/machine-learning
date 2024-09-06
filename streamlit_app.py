@@ -80,7 +80,7 @@ if st.button('Predict'):
     
     # Display the prediction
     st.write("Prediction:", prediction)
-if st.button('R2 score')
+if st.button('R2 score'):
  st.write("R-squared (R2):", r2)
 
 
