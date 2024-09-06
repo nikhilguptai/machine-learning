@@ -42,7 +42,7 @@ Volume = st.text_input("Enter Volume:")
 year = st.text_input("Enter year:")
 month = st.text_input("Enter month:")
 day = st.text_input("Enter Day:")
-input_data = np.array([[Open,High,Low,Adj_Close,Volume,year,month,day]])
+input_data = np.array([[float(Open), float(High), float(Low),float(Adj_Close),float(Volume),float(year),float(month),float(day)]])
 
 #data frame
 data = { 'Open' : Open,
