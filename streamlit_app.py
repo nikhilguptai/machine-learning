@@ -19,7 +19,7 @@ with st.expander('**Raw data**'):
  st.write('**Y**')
  Y = df.Close
  Y
-with st.expander('Data Visualization')
+with st.expander('Data Visualization'):
  for i in netflix.columns:
  plt.figure(figsize=(10,6))
  sns.distplot(df[i])
