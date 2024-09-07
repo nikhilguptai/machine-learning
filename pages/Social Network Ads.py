@@ -18,7 +18,7 @@ with st.expander('**Raw data**'):
  st.write('**X**')
 
  X = df.filter(items=[col for col in df.columns if col not in ['User ID','Purchased']])
- df['Gender'] = df['Gender'].map({'Male':1,'Female':0})
+ X['Gender'] = df['Gender'].map({'Male':1,'Female':0})
  X
  st.write('**Y**')
  Y = df.Purchased
@@ -57,9 +57,7 @@ X_train = np.asarray(X_train)
 Y_train = np.asarray(Y_train)
 
 
-if np.any(np.isnan(X_train)) or np.any(np.isnan(Y_train)):
-    X_train = np.nan_to_num(X_train)
-    Y_train = np.nan_to_num(Y_train)
+
 scalar = StandardScaler()
 X_train = scalar.fit_transform(X_train)
 X_test = scalar.transform(X_test)
