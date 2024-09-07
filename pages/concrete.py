@@ -41,7 +41,7 @@ superplasticizer = st.text_input("Enter superplasticizer:")
 coarse_aggregate = st.text_input("Enter coarse_aggregate:")
 fine_aggregate = st.text_input("Enter fine_aggregate:")
 age = st.text_input("Enter age:")
-input_data = np.array([[float(cement), float(blast_furnace_slag), float(fly_ash),float(water),float(superplasticizer),float(coarse_aggregate),float(fine_aggregate),float(age)]])
+input_data = np.array([[cement, blast_furnace_slag, fly_ash,water,superplasticizer,coarse_aggregate,fine_aggregate,age]])
 
 #data frame
 data = { 'cement' : cement,
