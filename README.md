@@ -21,4 +21,4 @@ This is filler text, please replace this with a explanatory text about further r
 - Resource 3
 
 
-[data1.csv](https://drive.google.com/file/d/1T8v5XIHM4Tsq-18MJsTYWBmmvg18-pR9/view?usp=drive_link)
+[Download from Google Drive](https://drive.google.com/file/d/1T8v5XIHM4Tsq-18MJsTYWBmmvg18-pR9/view?usp=drive_link)
