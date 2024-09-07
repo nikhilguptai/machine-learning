@@ -9,7 +9,7 @@ st.title('🤖This is Machine Learning app')
 
 st.info('This app builds machine learning model')
 st.info('Please select any one from Sidebar which you want to Predict')
-st.markdown("**This app consist of Five Prediction model thats are:-**")
+st.markdown("**This app consist Prediction model thats are:-**")
 st.write('**Concrete strenght Prediction**')
 
 st.write('**Netflix stock Prediction**')
