@@ -48,7 +48,7 @@ with st.expander('Input features'):
   st.write('**Combined stocks data**')
   input_purchased
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X,Y, test_size=0.2, random_state=2)
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size=0.2, random_state=2)
 from sklearn.preprocessing import StandardScaler
 scalar = StandardScaler()
 scalar.fit(X_train)
@@ -56,9 +56,9 @@ X_train = scalar.transform(X_train)
 X_test = scalar.transform(X_test)
 from sklearn.ensemble import RandomForestClassifier
 rfc = RandomForestClassifier()
-rfc.fit(X_train,y_train)
-y_pred = rfc.predict(X_test)
-accuracy_score(y_test,y_pred)
+rfc.fit(X_train,Y_train)
+Y_pred = rfc.predict(X_test)
+accuracy_score(Y_test,Y_pred)
 input_np_text = np.asarray(input_df)
 def check_purchase(predicion):
     if predicion == 1:
