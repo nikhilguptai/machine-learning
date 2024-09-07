@@ -9,7 +9,9 @@ from sklearn.metrics import r2_score
 import os
 os.system('pip install gdown')
 import gdown
-
+import requests
+import pandas as pd
+from io import StringIO
 
 
 
