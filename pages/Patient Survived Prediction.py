@@ -24,7 +24,7 @@ with st.expander('**Raw data**'):
   st.write('**Y**')
   y
 with st.expander('**Data**'):
-  st.write('**'Data Visualization**')
+  st.write('**Data Visualization**')
   st.subheader('Correlation Heatmap')
   fig, ax = plt.subplots()
   sns.heatmap(corr, annot=True, cbar=True, cmap='plasma', ax=ax)
