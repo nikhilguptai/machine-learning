@@ -25,12 +25,12 @@ with st.expander('**Raw data**'):
  Y
 with st.expander('Data Visualization'):
  st.write('***Data **')
- corr = df.corr()
+ corr = X.corr()
  sns.heatmap(corr,annot=True,cmap='coolwarm',cbar=True)
  sns.pairplot(df)
- for i in df.columns:
+ for i in X.columns:
   plt.figure(figsize=(10,6))
-  sns.distplot(df[i])
+  sns.distplot(X[i])
   plt.title(i)
   st.pyplot(plt)
   #Gender	Age	EstimatedSalary
