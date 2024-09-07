@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 
 st.title('🤖This is Machine Learning app')
 
-st.info('This app Social Network Ads Sales')
+st.info('This app is for patient Survival prediction')
 df = pd.read_csv('haberman.csv',header=None, names=['age','operational_year','exil_node','survival'])
 M = df
 df.drop_duplicates(inplace=True)
@@ -23,7 +23,7 @@ with st.expander('**Raw data**'):
   X
   st.write('**Y**')
   y
-with st.expander('**Data**'):
+with st.expander('**Data Visualization**'):
   st.write('**Data Visualization**')
   corr = df.corr()
   st.subheader('Correlation Heatmap')
@@ -48,7 +48,25 @@ with st.expander('**Data**'):
   fig, ax = plt.subplots()
   sns.scatterplot(x=df['age'], y=df['survival'], ax=ax)
   st.pyplot(fig)
-  
+
+age = st.number_input("Age", min_value=0, max_value=120, value=25)
+operational_year = st.text_input("operational_year:")
+exil_node = st.text_input("exil_node:")
+input_data = np.array([[age,operational_year,exil_node]])
+
+#data frame
+data = { 'age' : age,
+         'operational_year' : operational_year,
+          'exil_node' : exil_node, }
+
+input_df = pd.DataFrame(data, index=[0])
+input_surival = pd.concat([input_df, X], axis=0)
+with st.expander('Input features'):
+  st.write('**Input data**')
+  input_df
+  st.write('**Combined stocks data**')
+  input_survival
+
 
 
 
@@ -66,15 +84,15 @@ dtc.fit(X_train,y_train)
 dtc.predict(X_test)
 
 
-def pred(age,oy,en):
-    features = np.array([[age,oy,en]])
-    features = sclr.fit_transform(features)
-    pred = dtc.predict(features).reshape(1,-1)
-    return pred[0]
+def predict_survival(input_data):
+    input_scaled = sclr.transform(input_data)  # Scale the input data
+    prediction = dtc.predict(input_scaled)  # Predict survival
+    return prediction[0]
 
-
-age = 50
-oy = 61
-en = 2
-
-res = pred(age,oy,en)
+# Button to make the prediction
+if st.button('Predict'):
+    result = predict_survival(input_data)
+    if result == 1:
+        st.success("The model predicts that the patient will survive.")
+    else:
+        st.error("The model predicts that the patient will not survive.")
