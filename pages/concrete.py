@@ -32,34 +32,34 @@ with st.expander('Data Visualization'):
   sns.distplot(df[i])
   plt.title(i)
   st.pyplot(plt)
-  
-Open = st.text_input("Enter Open:")
-High = st.text_input("Enter High:")
-Low = st.text_input("Enter Low:")
-Adj_Close = st.text_input("Enter Adj_Close:") 
-Volume = st.text_input("Enter Volume:")
-year = st.text_input("Enter year:")
-month = st.text_input("Enter month:")
-day = st.text_input("Enter Day:")
-input_data = np.array([[float(Open), float(High), float(Low),float(Adj_Close),float(Volume),float(year),float(month),float(day)]])
+  #cement	blast_furnace_slag	fly_ash	water	superplasticizer	coarse_aggregate	fine_aggregate	age	concrete_compressive_strength
+cement = st.text_input("Enter cement:")
+blast_furnace_slag = st.text_input("Enter blast_furnace_slag:")
+fly_ash = st.text_input("Enter fly_ash:")
+water = st.text_input("Enter water:") 
+superplasticizer = st.text_input("Enter superplasticizer:")
+coarse_aggregate = st.text_input("Enter coarse_aggregate:")
+fine_aggregate = st.text_input("Enter fine_aggregate:")
+age = st.text_input("Enter age:")
+input_data = np.array([[float(cement), float(blast_furnace_slag), float(fly_ash),float(water),float(superplasticizer),float(coarse_aggregate),float(fine_aggregate),float(age)]])
 
 #data frame
-data = { 'Open' : Open,
-        'High' : High,
-        'Low' : Low,
-        'Adj_Close' : Adj_Close,
-        'Volume' : Volume,
-        'year' : year,
-        'month' : month,
-        'day' : day,}
+data = { 'cement' : cement,
+        'blast_furnace_slag' : blast_furnace_slag,
+        'fly_ash' : fly_ash,
+        'water' : water,
+        'superplasticizer' : superplasticizer,
+        'coarse_aggregate' : coarse_aggregate,
+        'fine_aggregate' : fine_aggregate,
+        'age' : age,}
 
 input_df = pd.DataFrame(data, index=[0])
-input_stocks = pd.concat([input_df, X], axis=0)
+input_strenght = pd.concat([input_df, X], axis=0)
 with st.expander('Input features'):
   st.write('**Input data**')
   input_df
   st.write('**Combined stocks data**')
-  input_stocks
+  input_strenght
  
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2)
 
