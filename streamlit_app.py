@@ -8,6 +8,7 @@ st.set_page_config(
 st.title('🤖This is Machine Learning app')
 
 st.info('This app builds machine learning model')
+st.markdown("**This app consist of Five Prediction model thats are:-**")
 
 
 
