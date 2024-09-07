@@ -49,9 +49,10 @@ with st.expander('**Data Visualization**'):
   sns.scatterplot(x=df['age'], y=df['survival'], ax=ax)
   st.pyplot(fig)
 
-age = st.number_input("Age", min_value=0, max_value=120, value=25)
-operational_year = st.text_input("operational_year:")
-exil_node = st.text_input("exil_node:")
+age = st.number_input("Age", min_value=1, max_value=120, value=30)
+operational_year = st.number_input("Operational Year", min_value=1900, max_value=2024, value=1960)
+exil_node = st.number_input("Number of Exil Nodes", min_value=0, max_value=50, value=1)
+
 input_data = np.array([[age,operational_year,exil_node]])
 
 #data frame
