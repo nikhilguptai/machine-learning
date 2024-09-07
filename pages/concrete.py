@@ -17,7 +17,8 @@ with st.expander('**Raw data**'):
  df
  st.write('**X**')
 
- X = df.filter(items=[col for col in df.columns if col not in ['concrete_compressive_strength']])
+ X = df.drop(columns=['concrete_compressive_strength'])
+
  X
  st.write('**Y**')
  Y = df.concrete_compressive_strength
@@ -41,8 +42,20 @@ superplasticizer = st.text_input("Enter superplasticizer:")
 coarse_aggregate = st.text_input("Enter coarse_aggregate:")
 fine_aggregate = st.text_input("Enter fine_aggregate:")
 age = st.text_input("Enter age:")
-input_data = np.array([[cement, blast_furnace_slag, fly_ash,water,superplasticizer,coarse_aggregate,fine_aggregate,age]])
+def convert_to_numeric(value):
+    try:
+        return float(value)
+    except ValueError:
+        return np.nan  # Handle conversion errors
 
+input_data = np.array([[convert_to_numeric(cement),
+                        convert_to_numeric(blast_furnace_slag),
+                        convert_to_numeric(fly_ash),
+                        convert_to_numeric(water),
+                        convert_to_numeric(superplasticizer),
+                        convert_to_numeric(coarse_aggregate),
+                        convert_to_numeric(fine_aggregate),
+                        convert_to_numeric(age)]])
 #data frame
 data = { 'cement' : cement,
         'blast_furnace_slag' : blast_furnace_slag,
