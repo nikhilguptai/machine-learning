@@ -3,6 +3,10 @@ import pandas as pd
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score
 
 st.title('🤖This is Machine Learning app')
 
@@ -47,10 +51,20 @@ with st.expander('Input features'):
   input_df
   st.write('**Combined stocks data**')
   input_purchased
-from sklearn.model_selection import train_test_split
-X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size=0.2, random_state=2)
 
-from sklearn.ensemble import RandomForestClassifier
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size=0.2, random_state=2)
+X_train = np.asarray(X_train)
+Y_train = np.asarray(Y_train)
+
+
+if np.any(np.isnan(X_train)) or np.any(np.isnan(Y_train)):
+    X_train = np.nan_to_num(X_train)
+    Y_train = np.nan_to_num(Y_train)
+scalar = StandardScaler()
+X_train = scalar.fit_transform(X_train)
+X_test = scalar.transform(X_test)
+
+
 rfc = RandomForestClassifier()
 rfc.fit(X_train,Y_train)
 Y_pred = rfc.predict(X_test)
