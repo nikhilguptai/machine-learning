@@ -49,13 +49,7 @@ with st.expander('Input features'):
   input_purchased
 from sklearn.model_selection import train_test_split
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size=0.2, random_state=2)
-from sklearn.preprocessing import StandardScaler
-scalar = StandardScaler()
-X_train = np.asarray(X_train)
-X_test = np.asarray(X_test)
-scalar.fit(X_train)
-X_train = scalar.transform(X_train)
-X_test = scalar.transform(X_test)
+
 from sklearn.ensemble import RandomForestClassifier
 rfc = RandomForestClassifier()
 rfc.fit(X_train,Y_train)
