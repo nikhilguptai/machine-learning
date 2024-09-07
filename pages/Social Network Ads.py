@@ -30,10 +30,10 @@ with st.expander('Data Visualization'):
   plt.title(i)
   st.pyplot(plt)
   #Gender	Age	EstimatedSalary
-Gender = st.text_input("Enter 1 for male and 0 for female:")
-age = st.text_input("Enter age:")
+Gender = st.selectbox("Gender", options=[0, 1])
+age = st.number_input("Age", min_value=0, max_value=120, value=25)
 EstimatedSalary= st.text_input("Enter EstimatedSalary:")
-input_data = np.array([[float(Gender), float(age), float(EstimatedSalary)]])
+input_data = np.array([[Gender,age,EstimatedSalary]])
 
 #data frame
 data = { 'Gender' : Gender,
