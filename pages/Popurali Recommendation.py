@@ -6,8 +6,11 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
-
+import os
+os.system('pip install gdown')
 import gdown
+
+
 
 file_id = '1T8v5XIHM4Tsq-18MJsTYWBmmvg18-pR9'
 
