@@ -12,17 +12,9 @@ import gdown
 
 
 
-file_id = '1T8v5XIHM4Tsq-18MJsTYWBmmvg18-pR9'
 
-# Google Drive download link
-url = f'https://drive.google.com/uc?id={file_id}'
+url = 'https://drive.google.com/file/d/1T8v5XIHM4Tsq-18MJsTYWBmmvg18-pR9/view?usp=sharing'
 
-# Output file path
-output = 'DatafinitiElectronicsProductsPricingData.csv'
 
-# Download the dataset from Google Drive
-gdown.download(url, output, quiet=False)
-
-# Load the dataset into a pandas DataFrame
-movies = pd.read_csv(output)
+movies = pd.read_csv(url)
 
