@@ -6,5 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
-df = pd.read_csv('/kaggle/input/electronic-products-prices/DatafinitiElectronicsProductsPricingData.csv')
-df
+movies = pd.read_csv('tmdb_5000_movies.csv')
+movies = movies[['title','overview','popularity','vote_count']]
+movies
+
