@@ -16,8 +16,10 @@ with st.expander('**Raw data**'):
  df=pd.read_csv('concrete_data.csv')
  df
  v=df.isnull().sum()
+ st.write('**Null value**')
  v
- u=df.dublicated().sum()
+ st.write('**Duplicate Value**')
+ u=df.duplicated().sum()
  u
  st.write('**X**')
 
