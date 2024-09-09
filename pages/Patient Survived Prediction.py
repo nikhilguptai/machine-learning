@@ -42,7 +42,11 @@ with st.expander('**Data Visualization**'):
   fig, ax = plt.subplots()
   sns.histplot(df['age'], kde=False, ax=ax)
   st.pyplot(fig)
-  
+
+  st.subheader('Age vs operational_year  Scatter Plot')
+  fig, ax = plt.subplots()
+  sns.scatterplot(x=df['age'], y=df['operational_year'], ax=ax)
+  st.pyplot(fig)
   # Scatter plot
   st.subheader('Age vs Survival Scatter Plot')
   fig, ax = plt.subplots()
