@@ -32,8 +32,15 @@ with st.expander('**Raw data**'):
 with st.expander('Data Visualization'):
  st.write('***Data **')
  corr = df.corr()
- sns.heatmap(corr,annot=True,cmap='coolwarm',cbar=True)
- sns.pairplot(df)
+ st.header('Correlation Heatmap')
+ fig, ax = plt.subplots()
+ sns.heatmap(corr, annot=True, cmap='coolwarm', cbar=True, ax=ax)
+ st.pyplot(fig)
+
+# Pairplot
+ st.header('Pairplot')
+ pairplot_fig = sns.pairplot(df)
+ st.pyplot(pairplot_fig)
  for i in df.columns:
   plt.figure(figsize=(10,6))
   sns.distplot(df[i])
