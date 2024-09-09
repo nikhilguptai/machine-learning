@@ -9,11 +9,12 @@ output = 'DatafinitiElectronicsProductsPricingData.csv'
 try:
     # Download the file
     gdown.download(url, output, quiet=False)
-    st.write("Download completed successfully!")
+    st.success("Download completed successfully!")
 
     # Read the dataset into a DataFrame
     df = pd.read_csv(output)
-    df
+    st.write("Dataset Preview:")
+    st.write(df.head())
 
 except Exception as e:
     st.error(f"An error occurred: {e}")
