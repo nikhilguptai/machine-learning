@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 
 # Direct download URL
-url = 'https://drive.google.com/uc?export=download&id=1T8v5XIHM4Tsq-18MJsTYWBmmvg18-pR9'
+url = 'https://drive.google.com/file/d/1T8v5XIHM4Tsq-18MJsTYWBmmvg18-pR9/view?usp=sharing'
 output = 'DatafinitiElectronicsProductsPricingData.csv'
 
 try:
