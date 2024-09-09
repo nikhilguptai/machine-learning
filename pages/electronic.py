@@ -11,12 +11,12 @@ output = 'DatafinitiElectronicsProductsPricingData.csv'
 try:
     with st.spinner('Downloading file...'):
         response = requests.get(url)
-        response.raise_for_status()  # Check if request was successful
-
-        with open(output, 'wb') as f:
-            f.write(response.content)
-    
-    st.success("Download completed successfully!")
+        if response.status_code == 200:
+            with open(output, 'wb') as f:
+                f.write(response.content)
+            st.success("Download completed successfully!")
+        else:
+            st.error(f"Failed to download file. Status code: {response.status_code}")
     
     # Check if file exists and is not empty
     if os.path.exists(output):
