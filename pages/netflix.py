@@ -34,7 +34,7 @@ with st.expander('**Raw data**'):
  
  u
 with st.expander('Data Visualization'):
- st.write('**Data **')
+ st.write('**Data**')
  corr = df.corr()
 
  st.header('Correlation Heatmap')
