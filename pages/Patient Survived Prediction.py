@@ -13,8 +13,14 @@ st.title('🤖This is Machine Learning app')
 
 st.info('This app is for patient Survival prediction')
 df = pd.read_csv('haberman.csv',header=None, names=['age','operational_year','exil_node','survival'])
+
+ v=df.isnull().sum()
+ st.write('**Null value**')
+ v
+ st.write('**Duplicate Value**')
+ df.drop_duplicates(inplace=True)
+ u=df.duplicated().sum()
 M = df
-df.drop_duplicates(inplace=True)
 X = df.drop("survival",axis=1)
 y = df['survival']
 with st.expander('**Raw data**'):
