@@ -14,9 +14,7 @@ st.title('🤖This is Machine Learning app')
 st.info('This app is for patient Survival prediction')
 df = pd.read_csv('haberman.csv',header=None, names=['age','operational_year','exil_node','survival'])
 v=df.isnull().sum()
-st.write('**Null value**')
-v
-st.write('**Duplicate Value**')
+
 df.drop_duplicates(inplace=True)
 u=df.duplicated().sum()
 M = df
@@ -28,6 +26,10 @@ with st.expander('**Raw data**'):
   X
   st.write('**Y**')
   y
+  st.write('**Null value**')
+  v
+  st.write('**Duplicate Value**')
+  u
 with st.expander('**Data Visualization**'):
   st.write('**Data Visualization**')
   corr = df.corr()
