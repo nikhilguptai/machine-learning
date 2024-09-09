@@ -39,6 +39,9 @@ with st.expander('Data Visualization'):
  fig, ax = plt.subplots()
  sns.heatmap(corr, annot=True, cmap='coolwarm', cbar=True, ax=ax)
  st.pyplot(fig)
+ st.header('Pairplot')
+ pairplot_fig = sns.pairplot(df)
+ st.pyplot(pairplot_fig)
 
  for i in X.columns:
   plt.figure(figsize=(10,6))
