@@ -1,26 +1,30 @@
-import requests
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaIoBaseDownload
+from google.oauth2 import service_account
+import io
 import pandas as pd
 import streamlit as st
-import io
 
-# Direct download URL
-file_id = '1T8v5XIHM4Tsq-18MJsTYWBmmvg18-pR9'
-url = f'https://drive.google.com/uc?export=download&id={file_id}'
+# Setup Google Drive API
+SCOPES = ['https://www.googleapis.com/auth/drive']
+SERVICE_ACCOUNT_FILE = 'path/to/service_account.json'
 
-try:
-    response = requests.get(url)
-    response.raise_for_status()  # Check if request was successful
+credentials = service_account.Credentials.from_service_account_file(
+    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+service = build('drive', 'v3', credentials=credentials)
 
-    if 'content-disposition' in response.headers:
-        content_disposition = response.headers['content-disposition']
-        filename = content_disposition.split('filename=')[1].strip('"')
-    else:
-        filename = 'DatafinitiElectronicsProductsPricingData.csv'
+# File ID of the Google Drive file
+FILE_ID = '1T8v5XIHM4Tsq-18MJsTYWBmmvg18-pR9'
+request = service.files().get_media(fileId=FILE_ID)
+fh = io.BytesIO()
+downloader = MediaIoBaseDownload(fh, request)
 
-    df = pd.read_csv(io.StringIO(response.text))
-    st.write("Dataset Preview:")
-    st.write(df.head())
-except requests.exceptions.RequestException as e:
-    st.error(f"Request error: {e}")
-except Exception as e:
-    st.error(f"An error occurred: {e}")
+done = False
+while done is False:
+    status, done = downloader.next_chunk()
+    st.write(f"Download {int(status.progress() * 100)}%.")
+
+fh.seek(0)
+df = pd.read_csv(fh)
+st.write("Dataset Preview:")
+st.write(df.head())
