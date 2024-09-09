@@ -19,7 +19,7 @@ try:
     
     with st.spinner('Loading data...'):
         # Read the dataset into a DataFrame
-        df = pd.read_csv(output)
+        df = pd.read_csv('DatafinitiElectronicsProductsPricingData.csv')
         st.write("Dataset Preview:")
         df
 
