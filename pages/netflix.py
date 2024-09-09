@@ -35,6 +35,8 @@ with st.expander('**Raw data**'):
  u
 with st.expander('Data Visualization'):
  st.write('**Data **')
+ corr = df.corr()
+
  st.header('Correlation Heatmap')
  fig, ax = plt.subplots()
  sns.heatmap(corr, annot=True, cmap='coolwarm', cbar=True, ax=ax)
