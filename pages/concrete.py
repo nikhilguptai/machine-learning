@@ -15,6 +15,10 @@ st.info('This app predict concrete strenght')
 with st.expander('**Raw data**'):
  df=pd.read_csv('concrete_data.csv')
  df
+ v=df.isnull().sum()
+ v
+ u=df.dublicated().sum()
+ u
  st.write('**X**')
 
  X = df.drop(columns=['concrete_compressive_strength'])
