@@ -20,9 +20,11 @@ try:
 
     # Read the dataset into a DataFrame
     df = pd.read_csv(output)
-    st.write(df.head())
+    df
 
 except requests.exceptions.RequestException as e:
     st.error(f"Request error: {e}")
 except Exception as e:
     st.error(f"An error occurred: {e}")
+
+
