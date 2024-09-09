@@ -22,9 +22,6 @@ try:
     df = pd.read_csv(output)
     df
 
-except requests.exceptions.RequestException as e:
-    st.error(f"Request error: {e}")
-except Exception as e:
-    st.error(f"An error occurred: {e}")
+
 
 
