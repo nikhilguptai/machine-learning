@@ -19,7 +19,9 @@ with st.expander('**Raw data**'):
  st.write('**Null value**')
  v
  st.write('**Duplicate Value**')
+ df.drop_duplicates(inplace=True)
  u=df.duplicated().sum()
+ 
  u
  st.write('**X**')
 
