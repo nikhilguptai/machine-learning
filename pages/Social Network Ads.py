@@ -23,11 +23,23 @@ with st.expander('**Raw data**'):
  st.write('**Y**')
  Y = df.Purchased
  Y
+ df
+ v=df.isnull().sum()
+ st.write('**Null value**')
+ v
+ st.write('**Duplicate Value**')
+ df.drop_duplicates(inplace=True)
+ u=df.duplicated().sum()
+ 
+ u
 with st.expander('Data Visualization'):
  st.write('***Data **')
  corr = X.corr()
- sns.heatmap(corr,annot=True,cmap='coolwarm',cbar=True)
- sns.pairplot(df)
+ st.header('Correlation Heatmap')
+ fig, ax = plt.subplots()
+ sns.heatmap(corr, annot=True, cmap='coolwarm', cbar=True, ax=ax)
+ st.pyplot(fig)
+
  for i in X.columns:
   plt.figure(figsize=(10,6))
   sns.distplot(X[i])
