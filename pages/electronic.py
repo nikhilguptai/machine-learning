@@ -21,7 +21,7 @@ try:
         # Read the dataset into a DataFrame
         df = pd.read_csv(output)
         st.write("Dataset Preview:")
-        st.write(df.head())
+        df
 
 except requests.exceptions.RequestException as e:
     st.error(f"Request error: {e}")
