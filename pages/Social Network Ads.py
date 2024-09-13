@@ -33,7 +33,7 @@ with st.expander('**Raw data**'):
  
  u
 with st.expander('Data Visualization'):
- st.write('***Data **')
+ st.write('**Data**')
  corr = X.corr()
  st.header('Correlation Heatmap')
  fig, ax = plt.subplots()
@@ -49,7 +49,7 @@ with st.expander('Data Visualization'):
   plt.title(i)
   st.pyplot(plt)
   #Gender	Age	EstimatedSalary
-Gender = st.selectbox("Gender", options=[0, 1])
+Gender = st.selectbox("Gender Select 1 for male and 0 for Female", options=[0, 1])
 age = st.number_input("Age", min_value=0, max_value=120, value=25)
 EstimatedSalary= st.text_input("Enter EstimatedSalary:")
 input_data = np.array([[Gender,age,EstimatedSalary]])
