@@ -10,7 +10,7 @@ from sklearn.metrics import r2_score
 
 st.title('🤖This is Machine Learning app')
 
-st.info('This app builds machine learning model')
+st.info('This Predict Netflix Stocks ')
 
 with st.expander('**Raw data**'):
  df=pd.read_csv('NFLX.csv')
