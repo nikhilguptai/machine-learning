@@ -23,7 +23,7 @@ with st.expander('**Raw data**'):
  st.write('**Y**')
  Y = df.Purchased
  Y
- df
+ 
  v=df.isnull().sum()
  st.write('**Null value**')
  v
