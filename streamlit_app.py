@@ -5,6 +5,13 @@ st.set_page_config(
     page_title="Multi-Page App",
     page_icon=":rocket:",
 )
+[theme]
+primaryColor = "#1e90ff"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#000000"
+font = "sans serif"
+
 st.title('🤖This is Machine Learning app')
 
 
