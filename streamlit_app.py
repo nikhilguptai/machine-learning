@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
  
-df=read_csv('https://drive.google.com/file/d/1T8v5XIHM4Tsq-18MJsTYWBmmvg18-pR9/view?usp=sharing')
+df=pd.read_csv('https://drive.google.com/file/d/1T8v5XIHM4Tsq-18MJsTYWBmmvg18-pR9/view?usp=sharing')
 df
 st.set_page_config(
     page_title="Multi-Page App",
