@@ -99,8 +99,8 @@ Y_pred = model.predict(X_test)
 
 r2 = r2_score(Y_test, Y_pred)
 
-st.write("R-squared (R2):", r2)
-st.write(f"Input shape: {input_data.shape}")
+#st.write("R-squared (R2):", r2)
+#st.write(f"Input shape: {input_data.shape}")
 
 # Make the prediction when the user clicks a button
 if st.button('Predict'):
