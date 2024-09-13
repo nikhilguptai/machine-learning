@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score
 
 st.title('🤖This is Machine Learning app')
 
-st.info('This app Social Network Ads Sales')
+st.info('This app Predict Social Network Ads Sales')
 
 with st.expander('**Raw data**'):
  df=pd.read_csv('Social_Network_Ads.csv')
