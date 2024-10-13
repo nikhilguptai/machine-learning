@@ -78,19 +78,12 @@ with st.expander('Input features'):
   input_df
   st.write('**Combined stocks data**')
   input_survival
-
-
-
-
-
+  
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=2)
-
 sclr = StandardScaler()
 sclr.fit(X_train)
 X_train = sclr.transform(X_train)
 X_test = sclr.transform(X_test)
-
-
 dtc = DecisionTreeClassifier()
 dtc.fit(X_train,y_train)
 dtc.predict(X_test)
