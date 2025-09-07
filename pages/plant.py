@@ -7,7 +7,7 @@ import tensorflow as tf
 from utils import clean_image, get_prediction, make_results
 
 # Loading the Model and saving to cache
-@st.cache(allow_output_mutation=True)
+@st.cache_resource
 def load_model(path):
     
     # Xception Model
@@ -52,7 +52,7 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 # Loading the Model
-model = load_model('model.h5')
+model = load_model('models/model.h5')
 
 # Title and Description
 st.title('Plant Diesease Detection')
